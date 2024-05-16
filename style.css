@@ -1,0 +1,49 @@
+.cubes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+}
+
+.loop {
+  transform: rotateX(-35deg) rotateY(-45deg) translateZ(1.5625em);
+}
+
+@keyframes s {
+  to {
+    transform: scale3d(0.2, 0.2, 0.2);
+  }
+}
+
+.item {
+  color: #fe1e52;
+  width: 3.125em;
+  height: 3.125em;
+  transform-origin: 50% 50% -1.5625em;
+  box-shadow: 0 0 0.125em currentColor;
+  background: currentColor;
+  animation: s 0.6s cubic-bezier(0.45, 0.03, 0.51, 0.95) infinite alternate;
+}
+
+.item:before,
+.item:after {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  transform-origin: 0 100%;
+  box-shadow: inherit;
+  background: currentColor;
+  content: "";
+}
+
+.item:before {
+  bottom: 100%;
+  transform: rotateX(90deg);
+  color: #ff6488;
+}
+
+.item:after {
+  left: 100%;
+  color: #ff416d;
+  transform: rotateY(90deg);
+}
